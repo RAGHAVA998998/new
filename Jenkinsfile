@@ -1,11 +1,16 @@
-pipeline {
+pipeline{
     
-    steps {
-        step ("build"){
-            echo "build step"
+    stages{
+        stage("build"){
+            steps{
+                echo "--------build step---------------"
+            }
         }
-        step ("deploy"){
-            echo "deploy step"
+        stage("deploy"){
+            steps{
+                echo "--------------------deploy step-----------------------------------"
+            }
         }
+        
     }
 }
