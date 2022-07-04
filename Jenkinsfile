@@ -4,8 +4,8 @@ pipeline{
         stage("build"){
             steps{
                 echo "--------build step---------------"
-                ls
-                pwd
+                sh 'ls'
+                sh 'pwd'
             }
         }
         stage("deploy"){
