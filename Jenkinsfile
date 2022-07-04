@@ -6,7 +6,7 @@ pipeline{
                 echo "--------build step---------------"
                 sh 'ls'
                 sh 'pwd'
-                sh 'docker'
+                sh 'docker image ls'
                 
                 
             }
