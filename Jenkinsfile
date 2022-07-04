@@ -6,7 +6,7 @@ pipeline{
                 echo "--------build step---------------"
                 sh 'ls'
                 sh 'pwd'
-                sh 'cd /'
+                sh 'cd /etc/'
                 sh 'pwd'
                 sh 'cd'
                 sh 'pwd'
