@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    properties{
+    options{
         VERSION = '1'
     }
     environment{
