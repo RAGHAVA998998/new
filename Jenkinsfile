@@ -1,7 +1,7 @@
 pipeline{
     agent any
  
-    properties([parameters([string(name: 'BRANCH', defaultValue: 'master')])])
+    options([parameters([string(name: 'BRANCH', defaultValue: 'master')])])
     environment{
     NEW_VERSION = '1.3.0'
 }
