@@ -12,9 +12,19 @@ pipeline{
             }
         }
         stage("deploy"){
-            steps{
-                echo "--------------------deploy step-----------------------------------"
+            parallel {
+                stage('deploy1'){
+                    steps{
+                        sh 'echo "-----------------deploy1------------------"'
+                    }
             }
+                stage('deploy2') {
+                    steps{
+                        sh 'echo deploy2'
+                    }
+                    
+                    }
+                }
         }
         
     }
