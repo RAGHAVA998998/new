@@ -1,7 +1,7 @@
 pipeline{
     agent any
     options{
-        VERSION = '1'
+        VERSION = ['1', '2']
     }
     environment{
     NEW_VERSION = '1.3.0'
