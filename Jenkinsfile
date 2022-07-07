@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    properties{
+        VERSION = '1'
+    }
     environment{
     NEW_VERSION = '1.3.0'
 }
