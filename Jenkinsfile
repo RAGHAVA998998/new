@@ -14,6 +14,11 @@ pipeline{
         stage("deploy"){
             parallel {
                 stage('deploy1'){
+                    when {
+                        expression {
+                            BRANCH_NAME == 'feature'
+                        }
+                    }
                     steps{
                         sh 'echo "-----------------deploy1------------------"'
                     }
