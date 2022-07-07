@@ -1,9 +1,12 @@
 pipeline{
     agent any
+    environment{
+    NEW_VERSION = '1.3.0'
+}
     stages{
         stage("build"){
             steps{
-                echo "--------build step---------------"
+                echo "--------build step--------$NEW_VERSION-------"
                 sh 'ls'
                 sh 'pwd'
                 sh 'docker image ls'
