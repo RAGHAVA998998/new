@@ -1,9 +1,16 @@
 pipeline{
     agent any
+ 
+    parameters {
+    string defaultValue : 'Jenkinsfile', description : '', name: 'jenkinsfileParameter',trim : false
+    }
+    environment{
+    NEW_VERSION = '1.3.0'
+}
     stages{
         stage("build"){
             steps{
-                echo "--------build step---------------"
+                echo "--------build step--------$NEW_VERSION-------${jenkinsfileParameter} is this"
                 sh 'ls'
                 sh 'pwd'
                 sh 'docker image ls'
@@ -12,9 +19,26 @@ pipeline{
             }
         }
         stage("deploy"){
-            steps{
-                echo "--------------------deploy step-----------------------------------"
+            parallel {
+                stage('deploy1'){
+                    when {
+                        expression {
+                            BRANCH_NAME == 'gh-pages'
+                        }
+                    }
+                    steps{
+                        sh 'echo "-----------------deploy1------------------"'
+                        sh 'minikube start'
+                        sh 'helm list'
+                    }
             }
+                stage('deploy2') {
+                    steps{
+                        sh 'echo deploy2'
+                    }
+                    
+                    }
+                }
         }
         
     }
