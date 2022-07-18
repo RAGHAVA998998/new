@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage("build"){
             steps{
-                echo "--------build step--------$NEW_VERSION-------"
+                echo "--------build step--------$NEW_VERSION-------${jenkinsfileParameter}"
                 sh 'ls'
                 sh 'pwd'
                 sh 'docker image ls'
