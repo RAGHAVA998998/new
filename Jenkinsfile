@@ -1,7 +1,7 @@
 pipeline{
     agent any
  
-    options([parameters([string(name: 'BRANCH', defaultValue: 'master')])])
+    
     environment{
     NEW_VERSION = '1.3.0'
 }
@@ -26,6 +26,8 @@ pipeline{
                     }
                     steps{
                         sh 'echo "-----------------deploy1------------------"'
+                        sh 'minikube start'
+                        sh 'helm list'
                     }
             }
                 stage('deploy2') {
