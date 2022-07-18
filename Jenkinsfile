@@ -21,7 +21,7 @@ pipeline{
                 stage('deploy1'){
                     when {
                         expression {
-                            BRANCH_NAME == 'feature'
+                            BRANCH_NAME == 'gh-pages'
                         }
                     }
                     steps{
