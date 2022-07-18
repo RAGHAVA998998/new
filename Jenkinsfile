@@ -2,7 +2,7 @@ pipeline{
     agent any
  
     parameters {
-    string defaultvalue : 'Jenkinsfile', description : '', name:'jenkinsfileParameter',trim : false
+    string defaultValue : 'Jenkinsfile', description : '', name: 'jenkinsfileParameter',trim : false
     }
     environment{
     NEW_VERSION = '1.3.0'
